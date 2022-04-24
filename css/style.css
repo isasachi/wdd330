@@ -1,0 +1,54 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    width: 50%;
+    margin: 0 auto;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #0e3352;
+    border-radius: 5px;
+}
+
+.profile-img {
+    max-width: 200px;
+    max-height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.name-title {
+    align-self: center;
+    justify-self: center;
+    font-size: 42px;
+    color: #FFF;
+}
+
+.lessons-list {
+    padding: 15px;
+}
+
+.lesson-item {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0e3352;
+    color: #FFF;
+    border-radius: 5px;
+}
+
+.footer-description {
+    margin-bottom: 5px;
+}
