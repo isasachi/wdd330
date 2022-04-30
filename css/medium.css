@@ -1,0 +1,20 @@
+@media only screen and (min-width: 32.5em) {
+    body {
+        width: 80%;
+        margin: 0 auto;
+        max-width: 640px;
+    }
+    
+    header {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .name-title {
+        font-size: 2rem;
+    }
+
+    header, footer {
+        border-radius: 5px;
+    }
+}

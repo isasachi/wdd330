@@ -5,18 +5,14 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-body {
-    width: 50%;
-    margin: 0 auto;
-}
-
 header {
-    display: grid;
-    grid-template-columns: 200px 1fr;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 20px;
     padding: 10px;
     background-color: #0e3352;
-    border-radius: 5px;
 }
 
 .profile-img {
@@ -29,8 +25,12 @@ header {
 .name-title {
     align-self: center;
     justify-self: center;
-    font-size: 42px;
+    font-size: 1.5rem;
     color: #FFF;
+}
+
+main {
+    padding: 10px;
 }
 
 .lessons-list {
@@ -46,7 +46,6 @@ footer {
     padding: 20px;
     background-color: #0e3352;
     color: #FFF;
-    border-radius: 5px;
 }
 
 .footer-description {
