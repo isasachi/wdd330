@@ -1,0 +1,14 @@
+@media only screen and (min-width: 970px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .principle-3 {
+        grid-column: 3/4;
+    }
+
+    .principle-1 img, .principle-2 img, .principle-3 img {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
