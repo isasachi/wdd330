@@ -1,0 +1,26 @@
+main {
+    margin: 0 30px;
+}
+
+h2 {
+    font-size: var(--heading-2);
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: var(--heading-3);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+p, b, li {
+    font-size: var(--paragraph);
+    margin: 5px;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
