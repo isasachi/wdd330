@@ -58,3 +58,14 @@ main {
 .principle-1 img, .principle-2 img, .principle-3 img {
     width: 100%;
 }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0e3352;
+    color: #FFF;
+}
+
+.footer-description {
+    margin-bottom: 5px;
+}

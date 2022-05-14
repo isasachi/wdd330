@@ -41,5 +41,24 @@
             <p>Here the hero section covers 2/3 of the grid in the block axis and the slider section covers 1/3. The hero section stands out from the slider section since the main focus is in the image presented on the hero section.</p>
         </div>
     </main>
+    <footer>
+        <p class="footer-description">© <span class="year"></span> | Isaac Salirrosas | Trujillo, Peru</p>
+        <p class="updated-line">Last updated: <span class="date-time"></span></p>
+    </footer>
 </body>
+<script>
+    const date = new Date().toLocaleString('en-US', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric'
+});
+
+    const dateField = document.querySelector('.date-time');
+    dateField.textContent = date;
+
+    const yearField = document.querySelector('.year');
+    yearField.textContent = new Date().getFullYear();
+</script>
 </html>

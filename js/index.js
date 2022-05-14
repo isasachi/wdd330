@@ -35,3 +35,6 @@ const date = new Date().toLocaleString('en-US', {
 
 const dateField = document.querySelector('.date-time');
 dateField.textContent = date;
+
+const yearField = document.querySelector('.year');
+yearField.textContent = new Date().getFullYear();
