@@ -1,21 +1,19 @@
 const dateField = document.querySelector('.date');
-const date1 = new Date();
-const date2 = new Date();
-date1.toLocaleString('en-US', {
+const date = new Date().toLocaleString('en-US', {
     weekday: 'long',
     day: 'numeric',
     month: 'long',
     year: 'numeric'
-})
+});
 
-dateField.textContent = date1;
+dateField.textContent = date;
 
-const year = date1.getFullYear();
+const year = new Date().getFullYear();
 const yearField = document.querySelector('.year');
 yearField.textContent = year;
 
 const lastModification = document.querySelector('.last-modification');
-const lastModificationDate = date2.toLocaleString('en-US', {
+const lastModificationDate = date.toLocaleString('en-US', {
     day: 'numeric',
     month: 'numeric',
     year: 'numeric',
