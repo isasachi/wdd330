@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover</title>
+    <meta name="description" content="Discover page for Isaac Salirrosas' Chamber of Commerce website assignment in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="css/root.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script defer src="js/script.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img class="logo-mobile" src="images/Lima-CC-logo-mobile.png" alt="Logo">
+            <img class="logo-large" src="images/Lima-CC-logo.png" alt="Logo">
+            <img src="images/facebook-brands.png" class="social-icon facebook-icon" alt="Facebook icon">
+            <img src="images/linkedin-brands.png" class="social-icon linkedin-icon" alt="Linkedin icon">
+            <button id="burgerBtn" class="burger-menu"><span>&#9776;</span><span>X</span></button>    
+            <nav>
+                <ul id="primaryNav" class="nav-list">
+                    <li class="nav-item"><a href="">Discover</a></li>
+                    <li class="nav-item"><a href="">Directory</a></li>
+                    <li class="nav-item"><a href="">Join</a></li>
+                    <li class="nav-item"><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <p class="date"></p>
+    </header>
+    <main class="discover-main">
+        <div class="demo-container">
+            <picture class="demo-img">
+                <source media="(max-width: 480px)" srcset="images/lima-image1-small.jpg">
+                <source media="(max-width: 800px)" srcset="images/lima-image1-medium.jpg">
+                <img src="images/lima-image1-large.jpg" alt="Photo of Lima's Costa Verde">
+            </picture>
+            <div class="demographics">
+                <p><b>Population:</b> 10,004,141 inhabitants</p>
+                <p><b>Most populated district:</b> San Juan de Lurigancho</p>
+                <p><b>Most popular places to visit:</b> the Plaza de Armas, the Costa Verde and the Circuito Mágico del Agua</p>
+            </div>
+        </div>
+        <div class="image-gallery">
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/lima-image2-small.jpg">
+                <source media="(max-width: 800px)" srcset="images/lima-image2-medium.jpg">
+                <img
+                    src="https://25cumbres.segib.org/wp-content/uploads/2016/09/ef3-placeholder-image-670x500.jpg" 
+                    data-src="images/lima-image2-large.jpg" 
+                    alt="Picture of Lima from gallery"
+                >
+            </picture>
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/lima-image3-small.jpg">
+                <source media="(max-width: 800px)" srcset="images/lima-image3-medium.jpg">
+                <img
+                    src="https://25cumbres.segib.org/wp-content/uploads/2016/09/ef3-placeholder-image-670x500.jpg" 
+                    data-src="images/lima-image3-large.jpg" 
+                    alt="Picture of Lima from gallery"
+                >
+            </picture>
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/lima-image4-small.jpg">
+                <source media="(max-width: 800px)" srcset="images/lima-image4-medium.jpg">
+                <img
+                    src="https://25cumbres.segib.org/wp-content/uploads/2016/09/ef3-placeholder-image-670x500.jpg" 
+                    data-src="images/lima-image4-large.jpg" 
+                    alt="Picture of Lima from gallery"
+                >
+            </picture>
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/lima-image5-small.jpg">
+                <source media="(max-width: 800px)" srcset="images/lima-image5-medium.jpg">
+                <img
+                    src="https://25cumbres.segib.org/wp-content/uploads/2016/09/ef3-placeholder-image-670x500.jpg" 
+                    data-src="images/lima-image5-large.jpg" 
+                    alt="Picture of Lima from gallery"
+                >
+            </picture>
+            <picture>
+                <source media="(max-width: 480px)" srcset="images/lima-image6-small.jpg">
+                <source media="(max-width: 800px)" srcset="images/lima-image6-medium.jpg">
+                <img 
+                    src="https://25cumbres.segib.org/wp-content/uploads/2016/09/ef3-placeholder-image-670x500.jpg" 
+                    data-src="images/lima-image6-large.jpg" 
+                    alt="Picture of Lima from gallery"
+                >
+            </picture>
+        </div>
+    </main>
+    <footer>
+        <img class="logo-mob-footer" src="images/Lima-CC-logo-mobile.png" alt="Logo">
+        <div>
+            <p><b>Lima Chamber of Commerce</b></p>
+            <p>Miraflores, Lima, Peru</p>
+        </div>
+        <div>
+            <p>info@limachamber.org</p>
+            <p>+1-202-555-0163</p>
+        </div>
+        <div class="personal-data">
+            <p>&copy;<span class="year"></span> Lima Chamber</p>
+            <p><b>Isaac Salirrosas</b></p>
+            <p>WDD 230 Project</p>
+            <p>Last Modification: <span class="last-modification"></span></p>
+        </div>
+    </footer>
+</body>
+</html>

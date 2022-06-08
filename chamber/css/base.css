@@ -2,6 +2,7 @@
     width: 100%;
     height: auto;
     max-width: 60px;
+    padding-left: 10px;
 }
 
 .logo-large {
@@ -243,4 +244,34 @@ footer p {
 
 .personal-data p {
     font-size: 12px;
+}
+
+.discover-main {
+    display: block;
+}
+
+.demo-img {
+    width: 100%;
+    display: block;
+}
+
+.demo-img img {
+    width: 100%;
+}
+
+.demographics {
+    width: 100%;
+}
+
+.image-gallery {
+    width: 100%;
+}
+
+.image-gallery picture {
+    width: 100%;
+    display: block;
+}
+
+.image-gallery picture img {
+    width: 100%;
 }

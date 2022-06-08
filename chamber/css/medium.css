@@ -81,4 +81,26 @@
         border: none;
     }
 
+    .demo-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 10px 30px 10px;
+        padding: 5px;
+        border: 2px solid #555;
+    }
+
+    .demo-img {
+        width: 50%;
+    }
+
+    .demographics {
+        width: 50%;
+        align-self: center;
+        padding-left: 20px;
+    }
+
+    .image-gallery picture {
+        max-width: 600px;
+        margin: 0 auto 20px auto;
+    }
 }
