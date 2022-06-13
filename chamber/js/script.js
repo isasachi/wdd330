@@ -56,3 +56,5 @@ const imageObserver = new IntersectionObserver((entries, observer) => {
 images.forEach(image => {
     imageObserver.observe(image);
 });
+
+document.querySelector('input[hidden]').value = date;
