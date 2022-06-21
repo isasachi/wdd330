@@ -1,0 +1,83 @@
+[
+    {
+        "name": "AGRIBRANDS PURINA PERU S.A.",
+        "address": "AV. ALFREDO MENDIOLA NRO. 3520 (CARR. PANAMERICANA NORTE KM. 15.2), INDEPENDENCIA, LIMA",
+        "phoneNumber": 7116500,
+        "websiteURL": "http://www.nutrimentospurina.com",
+        "logoImage": "https://www.nutrimentospurina.com/images/b4f5bab6e68a29a65cd79e234c34ac80.png?v=25784f5ac84378eff2eb61d763d6c817",
+        "area": "AGRICULTURE AND CATTLE RAISING",
+        "membershipLevel": "BRONZE"
+    },
+    {
+        "name": "GRUPO GLORIA",
+        "address": "REPUBLICA DE PANAMA NRO. 2461 URB. SANTA CATALINA, LA VICTORIA, LIMA",
+        "phoneNumber": 4707170,
+        "websiteURL": "https://www.gloria.com.pe/",
+        "logoImage": "https://www.gloria.com.pe/images/lineaTiempo/logo.jpg",
+        "area": "FOOD AND DRINKS",
+        "membershipLevel": "SILVER"
+    },
+    {
+        "name": "AMC GASKETS",
+        "address": "24 DE JULIO MZA. G LOTE. 14 TABLADA DE LURIN, VILLA MARÍA DEL TRIUNFO, LIMA",
+        "phoneNumber": 2952484,
+        "websiteURL": "http://www.amc-gaskets.com",
+        "logoImage": "https://www.amc-gaskets.com/es/assets/img/logo.png",
+        "area": "AUTOMOTIVE",
+        "membershipLevel": "SILVER"
+    },
+    {
+        "name": "CONSTRUCTORA CCN DISEÑO Y ARQUITECTURA S.A.C",
+        "address": "NRO. 257 DPTO. 801 SAN BORJA NORTE, SAN BORJA, LIMA",
+        "phoneNumber": 990525256,
+        "websiteURL": "http://www.arquitecturaccn.pe",
+        "logoImage": "https://arquitecturaccn.pe/wp-content/uploads/2019/11/LOGO-CCN.jpg",
+        "area": "BUILDING",
+        "membershipLevel": "GOLD"
+    },
+    {
+        "name": "ICPNA",
+        "address": "ANGAMOS OESTE Nº 120 ZONA USO EDUCACION, MIRAFLORES, LIMA",
+        "phoneNumber": 7067001,
+        "websiteURL": "http://www.icpna.edu.pe",
+        "logoImage": "https://www.icpna.edu.pe/static/img/logo.svg",
+        "area": "EDUCATION",
+        "membershipLevel": "GOLD"
+    },
+    {
+        "name": "ASOCIACION EDITORIAL BRUÑO",
+        "address": "ARICA #751, BREÑA, LIMA",
+        "phoneNumber": 2024747,
+        "websiteURL": "http://www.editorialbruno.com.pe",
+        "logoImage": "http://www.editorialbruno.com.pe/images/logo.jpg",
+        "area": "PRINTING AND STATIONERY",
+        "membershipLevel": "BRONZE"
+    },
+    {
+        "name": "SUIZA LAB",
+        "address": "ANGAMOS OESTE NRO. 300 RES. MIRAFLORES (ALTURA DEL ICPNA), MIRAFLORES, LIMA",
+        "phoneNumber": 6126666,
+        "websiteURL": "https://www.suizalab.com/",
+        "logoImage": "https://www.suizalab.com/wp-content/uploads/2020/08/logo-SL100.png",
+        "area": "HEALTH",
+        "membershipLevel": "SILVER"
+    },
+    {
+        "name": "ISHOP",
+        "address": "RICARDO RIVERA NAVARRETE NRO. 475 INT. 1004 URB. JARDIN, SAN ISIDRO, LIMA",
+        "phoneNumber": 7309100,
+        "websiteURL": "https://tiendasishop.com/pe/",
+        "logoImage": "https://tiendasishop.com/static/version1655405246/frontend/Omnipro/ishop/es_PE/images/logo.svg",
+        "area": "INFORMATION TECHNOLOGY",
+        "membershipLevel": "GOLD"
+    },
+    {
+        "name": "ENTEL PERU S.A.",
+        "address": "REPUBLICA DE COLOMBIA NRO. 791 (PISO 14), SAN ISIDRO, LIMA",
+        "phoneNumber": 6111111,
+        "websiteURL": "http://www.entel.pe",
+        "logoImage": "http://www.logosenvector.com/logo/img/entel-180.jpg",
+        "area": "TELECOMMUNICATIONS",
+        "membershipLevel": "SILVER"
+    }
+]
