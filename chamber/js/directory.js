@@ -35,3 +35,5 @@ function renderCompany(company) {
 
     directoryContainer.append(container);
 }
+
+getCompanies();

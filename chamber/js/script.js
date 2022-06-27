@@ -33,8 +33,6 @@ function toggleMenu() {
 const burgerButton = document.getElementById('burgerBtn');
 burgerButton.onclick = toggleMenu;
 
-window.onload = getCompanies();
-
 /* Weather API */
 
 const weatherIcon = document.querySelector('.weather-icon');
