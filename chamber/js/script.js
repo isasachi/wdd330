@@ -35,13 +35,15 @@ burgerButton.onclick = toggleMenu;
 
 /* Weather API */
 
+const OWM_API_KEY = '5eb92a32fb342431913bce6747846956';
+
 const weatherIcon = document.querySelector('.weather-icon');
 const weatherTemp = document.querySelector('.weather-temp');
 const weatherCondition = document.querySelector('.weather-condition');
 const windSpeed = document.querySelector('.wind-speed');
 const windChill = document.querySelector('.wind-chill');
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=Lima&units=metric&appid=${config.OWM_API_KEY}`;
+const url = `https://api.openweathermap.org/data/2.5/weather?q=Lima&units=metric&appid=${OWM_API_KEY}`;
 
 async function fetchWeatherData() {
     try {
