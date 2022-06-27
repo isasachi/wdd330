@@ -186,6 +186,14 @@ button {
     margin: 5px 0;
 }
 
+.weather .wind-s, .weather .wind-c {
+    font-size: 1rem;
+}
+
+.weather .wind-speed, .weather .wind-chill {
+    font-weight: 700;
+}
+
 .weather .weather-temp {
     font-size: 1.8em;
 }
