@@ -21,7 +21,8 @@
         text-align: center;
     }
 
-    .join button {
+    .join a {
+        width: fit-content;
         display: block;
         margin: 1.2em auto;
         border: none;
@@ -29,6 +30,7 @@
         color: #FFF;
         padding: 1.2em 3em;
         border-radius: 0.2em;
+        text-decoration: none;
     }
 
     .container {

@@ -126,6 +126,7 @@ button {
 } */
 
 .hero div {
+    width: 70%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -137,9 +138,11 @@ button {
     color: #FFF;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem 0;
 }
 
-.hero button {
+.hero a {
+    width: fit-content;
     display: block;
     color: #FFF;
     background-color: var(--accent-color);
@@ -148,6 +151,7 @@ button {
     border-radius: 0.2em;
     margin: 0 auto;
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .event {
@@ -211,6 +215,13 @@ button {
     flex-direction: column;
 }
 
+.spotlight img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 70%;
+}
+
 .spotlight1, .spotlight2, .spotlight3 {
     flex: 1;
     text-align: center;
@@ -223,10 +234,6 @@ button {
 
 .spotlight3 {
     display: none;
-}
-
-.inner-container img {
-    width: 30%;
 }
 
 .logo-mob-footer {
@@ -254,7 +261,7 @@ footer p {
     font-size: 12px;
 }
 
-.discover-main, .join-main, .directory-main {
+.discover-main, .join-main, .directory-main, .contact-main {
     display: block;
 }
 
@@ -345,4 +352,40 @@ input.submitBtn {
     border-radius: 8px;
     padding: 10px;
     box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.3);
+}
+
+.contact-main {
+    display: flex;
+    justify-content: center;
+}
+
+.contact-form {
+    margin-right: 100px;
+}
+
+.contact-form label, .contact-form input {
+    display: block;
+}
+
+.contact-form input, .contact-form textarea {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    border: 1px solid #999;
+    border-radius: 4px;
+    padding: 0.75rem;
+    color: #555;
+    width: 100%;
+    max-width: 20rem;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button {
+    margin-top: 1.5rem;
+    background-color: var(--accent-color);
+    color: #FFF;
+    border-radius: 0.2rem;
+    padding: 0.4rem;
+    border: none;
+    width: 100%;
+    max-width: 20rem;
 }

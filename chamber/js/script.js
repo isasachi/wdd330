@@ -77,3 +77,39 @@ function renderWeatherData(data) {
 }
 
 fetchWeatherData();
+
+/* Spotlight section */
+
+const directoryUrl = 'json/data.json';
+
+async function fetchData() {
+    const response = await fetch(directoryUrl);
+    const data = await response.json();
+    let counter = 0;
+    for (item of data) {
+        if (item.membershipLevel === 'GOLD') {
+            counter++;
+            renderData(item, counter);
+        }
+    }
+}
+
+function renderData(item, counter) {
+    const mainContainer = document.querySelector('.spotlight');
+    const container = document.createElement('div');
+    const titleName = document.createElement('h2')
+    const image = document.createElement('img');
+    const link = document.createElement('a');
+
+    container.classList.add('inner-container', `spotlight${counter}`);
+    titleName.textContent = item.name;
+    image.src = item.logoImage;
+    image.alt = item.name;
+    link.href = item.websiteURL;
+    link.textContent = 'Visit website';
+
+    container.append(titleName,image, link);
+    mainContainer.append(container);
+}
+
+fetchData();

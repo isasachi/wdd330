@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank you</title>
-    <meta name="description" content="Thank You page for Isaac Salirrosas' Chamber of Commerce website assignment in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
+    <title>Contact</title>
+    <meta name="description" content="Join page for Isaac Salirrosas' Chamber of Commerce website assignment in WDD 230: Web Frontend Development at Brigham Young University - Idaho">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/base.css">
@@ -36,9 +36,28 @@
         </div>
         <p class="date"></p>
     </header>
-    <main class="join-main">
-        <h1>Thank you</h1>
-        <p>Thank you for subscribing to our membership program. We'll send more information to your email.</p>
+    <main class="contact-main">
+        <div class="contact-form-container">
+            <h2>Contact us</h2>
+            <form class="contact-form">
+                <label for="name">Full Name*</label>
+                <input type="text" name="name" id="name" required>
+                <label for="email">Email*</label>
+                <input type="text" name="email" id="email" required>
+                <label for="message">Message*</label>
+                <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>Contact Information</h2>
+            <h3>📌 Address</h3>
+            <p>Av Giuseppe Garibaldi 396, Jesús María 15072 Lima - Perú</p>
+            <h3>📞 Phone number</h3>
+            <p>+1-202-555-0163</p>
+            <h3>✉ Email</h3>
+            <p>info@limachamber.org</p>
+        </div>
     </main>
     <footer>
         <img class="logo-mob-footer" src="images/Lima-CC-logo-mobile.png" alt="Logo">
