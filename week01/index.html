@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 01 Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Week 01 Notes</h1>
+        <p class="author">by Isaac Salirrosas</p>
+    </header>
+    <main>
+        <h2>Useful Git Commands</h2>
+        <div class="git-commands">
+            <p>Create an empty repository in the project folder:</p>
+            <code>git init</code>
+            <p>Clone a repository from GitHub and add it to the project folder:</p>
+            <code>git clone (repo URL)</code>
+            <p>Retrieve the most recent changes from origin but don't merge:</p>
+            <code>git fetch</code>
+            <p>Retrieve the most recent changes from origin and merge:</p>
+            <code>git pull</code>
+            <p>Add file changes to staging:</p>
+            <code>git add (file name)</code>
+            <p>Remove a file and stop tracking it:</p>
+            <code>git rm (file_name)</code>
+            <p>Display the status of modified files:</p>
+            <code>git status</code>
+            <p>Display changes in a file compared to the most recent commit:</p>
+            <code>git diff (file_name)</code>
+            <p>Commit changes along with a custom message:</p>
+            <code>git commit -m "(message)"</code>
+            <p>Switch to a commit in the current branch:</p>
+            <code>git checkout (commit)</code>
+            <p>Discard all changes to a commit:</p>
+            <code>git reset -hard (commit)</code>
+            <p>Show the history of changes:</p>
+            <code>git log</code>
+            <p>Push changes to origin:</p>
+            <code>git push</code>
+            <p>Display a list of all branches:</p>
+            <code>git branch</code>
+            <p>Make a new branch and switch to it:</p>
+            <code>git checkout -b (branchname)</code>
+            <p>Delete a branch:</p>
+            <code>git branch -d (branchname)</code>
+            <p>Merge a different branch with your active branch:</p>
+            <code>git merge (branchname)</code>
+        </div>
+        <h2>OOP in JavaScript</h2>
+        <p><strong>Encapsulation:</strong> The programming logic is kept inside the object and only its methods are available to the user to implement the functionality.</p>
+        <p><strong>Polymorphism:</strong> In OOP, this means that different objects can have the same method, but they implement it in their own way.</p>
+        <p><strong>Inheritance:</strong> In OOP, this means that we can take an object that already exists and inherit all its properties and methods. We can then improve on its functionality by adding new properties and methods.</p>
+        <p><strong>Classes:</strong> JavaScript doesn’t use classes (although ECMAScript 6 will support them), but it does use the concept of object prototypes, which can be used as a blueprint for creating other objects.</p>
+        <h3>Constructor Function</h3>
+        JavaScript contains a number of built-in constructor functions such as <code>Object</code>, <code>Array</code>, and <code>Function</code> that can be used to create objects, arrays, and functions instead of literals.
+        </p>
+        <h3>Prototypal Inheritance</h3>
+        <p>We can instantiate an object from a constructor function. The new instantiated object inherits every property and method the constructor has.</p>
+        <h3>The prototype object</h3>
+        <p>Every function has a property called <code>prototype</code> which returns an object. When we instantiate an object using the new operator this object inherits all the properties and methods from the constructor’s prototype object.</p>
+        <ul>
+            <li>An easy way of getting the prototype of an object is to use the dunder proto, a fancy name for <code>__proto__</code>.</li>
+        </ul>
+        <h3>Own Properties and Prototype Properties</h3>
+        <p>So, what’s the difference between own properties and prototype properties? Prototype properties are shared by every instance of the constructor function. This means that they’ll all have a common property and it will always be the same value. If we create another instance of the constructor, we’ll see that it also inherits a property that has the same value of the original prototype property.</p>
+        <h3>The Prototype Is Live!</h3>
+        <p>The prototype object is live, so if a new property or method is added to the prototype, any instances of it will inherit the new properties and methods automatically, even if that instance has already been created.</p>
+        <h3>What Should the Prototype Be Used For?</h3>
+        <p>The prototype can be used to add any new properties and methods after the constructor function has been defined. It should be used to define any properties that will remain the same for every instance of the constructor.</p>
+        <h3>Public and Private Methods</h3>
+        <p>We can use the concept of variable scope to keep properties private and prevent them from being changed. A getter method can then be used to return their values.</p>
+    </main>
+</body>
+</html>
