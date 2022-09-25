@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 01 Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Week 02 Notes</h1>
+        <p class="author">by Isaac Salirrosas</p>
+    </header>
+    <main>
+        <h2>L04 Readings' Notes</h2>
+        <div class="block-1">
+            <h2>Errors, Exceptions, and Warnings</h2>
+            <p>Errors are caused when something goes wrong in a program. They are usually caused by one of the following:</p>
+            <ul>
+                <li>System error ― there’s a problem with the system or external devices with which the program is interacting.</li>
+                <li>Programmer error ― the program contains incorrect syntax or faulty logic; it could even be as simple as a typo.</li>
+                <li>User error ― the user has entered data incorrectly, which the program is unable to handle.</li>
+            </ul>
+            <h3>Exceptions</h3>
+            <p>An exception is an error that produces a return value that can then be used by the program to deal with the error. For example, trying to call a method that is nonexistent will result in a reference error that raises an exception.</p>
+            <pre>
+                <code class="block">unicorn(); 
+
+>> ReferenceError: unicorn is not defined}</code>
+            </pre>
+            <h3>Stack Traces</h3>
+            <p>An exception will also produce a stack trace. This is a sequence of functions or method calls that lead to the point where the error occurred.</p>
+            <pre>
+                <code class="block">function three(){ unicorn(); }
+function two(){ three(); }
+function one(){ two(); }
+one();
+
+>> index.html:13 Uncaught ReferenceError: unicorn is not defined
+    at three (index.html:13)
+    at two (index.html:17)    
+    at one (index.html:21)
+    at index.html:24</code>
+            </pre>
+            <h3>Warnings</h3>
+            <p>A warning can occur if there’s an error in the code that isn't enough to cause the program to crash.</p>
+            <pre>
+                <code class="block">pi = 3.142;
+>> JavaScript Warning: assignment to undeclared variable</code>
+            </pre>        
+        </div>
+        <div class="block-2">
+            <h2>Strict Mode</h2>
+            <p>ECMAScript 5 introduced a strict mode that produces more exceptions and warnings and prohibits the use of some deprecated features. This is due to the fact that strict mode considers coding practices that were previously accepted as just being 'poor style' as actual errors.</p>
+            <p>To see it in action, if you try to assign a value to a variable that is undeclared in strict mode, you'll get an exception, instead of a warning:</p>
+            <pre>
+                <code class="block">'use strict';
+    
+e = 2.718;
+>> ReferenceError: e is not defined</code>
+            </pre>
+        </div>
+        <div class="block-3">
+            <h2>Debugging in the Browser</h2>
+            <p>Debugging is the process of finding out where bugs occur in the code and then dealing with them. In many cases, the point at which an error occurs is not always where it originated, so you’ll need to run through the program to see what’s happening at different stages of its execution. When doing this, it can be useful to create what are known as breakpoints, which halt the progress of the code and allow us to view the value of different variables at that point in the program. There are a number of options for debugging JavaScript code in the browser.</p>
+            <h3>Options for debugging</h3>
+            <ul>
+                <li><strong>alert():</strong> The most basic form of debugging is to use the alert() method to show a dialog at certain points in the code.</li>
+                <li><strong>Using the Console:</strong> Being <code>console.log()</code> the most famous method for console debugging, the <code>console</code> object provides a number of methods for logging information and debugging.</li>
+                <li><strong>Debugging Tools:</strong> Most modern browsers (Chrome, Firefox, Edge) also have a debugging tool that allows you to set breakpoints in your code that will pause it at certain points.</li>
+            </ul>
+        </div>
+        <div class="block-4">
+            <h2>Error Objects</h2>
+            <p>An error object can be created by the host environment when an exception occurs, or it can be created in the code using a constructor function, like so:</p>
+            <code>const error = new Error();</code>
+            <p>This constructor function takes a parameter that’s used as the error message:</p>
+            <code>const error = new Error('Oops, something went wrong');</code>
+            <h3>Throwing Exceptions</h3>
+            <p>So far we’ve seen errors that are thrown automatically by the JavaScript engine when an error occurs. It’s also possible to throw your own exceptions using the <code>throw</code> statement. This will allow for any problems in your code to be highlighted and dealt with, rather than lurk quietly in the background.</p>
+            <pre>
+                <code class="block">throw 2;
+throw 'Up';
+throw { toys: 'out of pram' };</code>
+            </pre>
+        </div>
+        <div class="block-5">
+            <h2>Exception Handling</h2>
+            <p>It is possible to handle exceptions gracefully by catching the error. Any errors can be hidden from users, but still identified. We can then deal with the error appropriately ― perhaps even ignore it ― and keep the program running.</p>
+            <p>If we suspect a piece of code will result in an exception, we can wrap it in a try block. This will run the code inside the block as normal, but if an exception occurs it will pass the error object that is thrown onto a catch block. See the example below.</p>
+            <pre>
+                <code class="block">function imaginarySquareRoot(number) {
+    'use strict';
+    try {
+        return String(squareRoot(number));
+    } catch(error) {
+        return squareRoot(-number)+'i';
+    }
+}</code>
+            </pre>
+        </div>
+        <div class="block-6">
+            <h2>How does a SPA work?</h2>
+            <p>Single-page applications control navigation so that we re-use the active Document instead of sending a request to a server.</p>
+            <p>Routers are typically used to power route matching within a single-page application. Route matching is done when the location changes, determines which route matches the new location, and then triggers a re-render of the application.</p>
+            <p>In-app navigation is performed using the History API. The default click behavior for anchors is overridden to use pushState() and replaceState() to navigate. A popstate event listener is used to detect navigation with the browser’s forward/back buttons. The click handler and event listener should both inform the router about the navigation to trigger the route matching cycle.</p>
+        </div>
+        <div class="block-7">
+            <h2>The template element</h2>
+            <p>Put simply, it provides an easy way to define a reusable fragment of HTML that can be manipulated just like you would the contents of the document itself, but without the overhead of actually updating the DOM or having to compile and parse strings of HTML.</p>
+            <p>To manipulate the template's content we should get the template trhough a selector and then access its <code>content</code> property. Then we should create a clone of this <code>DocumentFragment</code> using the <code>cloneNode</code> method of the template content. This method, when called with <code>true</code> as an argument, creates a completely new DocumentFragment instance that's an exact copy of the original that we can use as plain HTML code.</p>
+        </div>
+    </main>
+</body>
+</html>
