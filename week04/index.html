@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 04 Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Week 04 Notes</h1>
+        <p class="author">by Isaac Salirrosas</p>
+    </header>
+    <main>
+        <div class="l07-readings">
+            <h2>L07 Readings' Notes</h2>
+            <h3>Further Functions</h3>
+            <h4>Call and Apply methods</h3>
+            <p>The <code>call()</code> method can be used to set the value of this inside a function to an object that is provided as the first argument.</p>
+            <p>If we create an object with a name property and then use the <code>call()</code> method to invoke a function that uses this.name inside of it, our object will take the place of this.</p>
+            <p> If a function doesn’t refer to an object as this in its body, it can still be called using the <code>call()</code> method, but you need provide null as its first argument.</p>
+            <p>The <code>apply()</code> method works in the same way, except the arguments of the function are provided as an array, even if there is only one argument.</p>
+            <h4>Memoization</h4>
+            <p>If a function takes some time to compute a return value, we can save the result in a cache property. Then if the same argument is used again later, we can return the value from the cache, rather than having to compute the result again.</p>
+            <h4>Immediately Invoked Function Expressions</h4>
+            <p>An Immediately Invoked Function Expression - or IIFE - (pronounced 'iffy') is an anonymous function that, as the name suggests, is invoked as soon as it’s defined. This is easily achieved by placing parentheses at the end of the function definition (remember we use parentheses to invoke a function). The function also has to be made into an expression, which is done by placing the whole declaration inside parentheses.</p>
+            <h4>Functions that Define and Rewrite Themselves</h4>
+            <p>This is called the Lazy Definition Pattern and is often used when some initialization code is required the first time it’s invoked. This means the initialization can be done the first time it’s called, then the function can be redefined to what you want it to be for every subsequent invocation.</p>
+            <h4>Recursive Functions</h4>
+            <p>A recursive function is one that invokes itself until a certain condition is met. It’s a useful tool to use when iterative processes are involved. A common example is a function that calculates the factorial of a number.</p>
+            <h4>Callbacks</h4>
+            <p>Callbacks are functions passed to other functions as arguments and then invoked inside the function they are passed to.</p>
+            <p>JavaScript runs code sequentially, but sometimes we want some code to run after something happens, this is called asynchronous programming.</p>
+            <p>Callbacks ensure that functions don’t run until some task is completed.</p>
+            <h4>Promises</h4>
+            <p>A promise represents the future result of an asynchronous operation. Promises don't do anything that can't already be achieved using callbacks, but they help simplify the process, and avoid the convoluted code that can result from using multiple callbacks.</p>
+            <p>A promise has two states, unsettled, and settled. When a promise is created it calls an asynchronous operation and goes into the unsettled state, when the operation is done it goes into the settled state.</p>
+            <p>A promise can return two different outcomes:</p>
+            <ul>
+                <li>Resolved ― the asynchronous operation was completed successfully.</li>
+                <li>Rejected ― the asynchronous operation didn’t work as expected, wasn't successfully completed or resulted in an error.</li>
+            </ul>
+            <p>Once a promise has been settled, the <code>then()</code> method can be used to deal with the outcome. This method accepts two arguments. The first is a fulfilment function that’s called when the promise is resolved. Any data returned from the <code>resolve()</code> function will be passed along to this function. The second argument is a rejection function that’s called if the promise is rejected. Similar to the fulfilment function, the rejection function receives any data returned from the <code>reject()</code> function.</p>
+            <p>Alternatively, the <code>catch()</code> method can be used to specify what to do if the operation fails instead.</p>
+            <p>The <code>then()</code> and <code>catch()</code> methods can be chained together to form a succinct description of how to deal with the outcome of the promise.</p>
+            <h4>Async Functions</h4>
+            <p>Async functions were added to the ES2017 specification. These functions are preceded by the async keyword and allow you to write asynchronous code as if it was synchronous. This is achieved by using the await operator before an asynchronous function. This will wrap the return value of the function in a promise that can then be assigned to a variable. The next line of code is not executed until the promise is resolved.</p>
+            <h4>Closures</h4>
+            <h5>Function Scope</h5>
+            <p>Variables defined using const and let have block scope, meaning that they can only be referenced inside the block in which they were defined.</p>
+            <p>A closure is a reference to a variable that was created inside the scope of another function, but is then kept alive and used in another part of the program.</p>
+            <h5>Returning Functions</h5>
+            <p>As we saw in the example above, functions declared from within another function have access to any variables declared in the outer function’s scope.</p>
+            <p>A closure is formed when the inner function is returned by the outer function, maintaining access to any variables declared inside the enclosing function.</p>
+            <h5>Generators</h5>
+            <p>ES6 introduced support for generators. These are special functions used to produce iterators that maintain the state of a value.</p>
+            <p>To define a generator function, an asterisk symbol (*) is placed after the function declaration.</p>
+            <p>Generator functions employ the special yield keyword that is used to return a value. The difference between the yield and the return keywords is that by using yield, the state of the value returned is remembered the next time yield is called. Hence, the current value in the Fibonacci sequence will be stored for use later. The execution of the loop is paused after every yield statement, until the <code>next()</code> method is called again.</p>
+            <h4>Functional Programming</h4>
+            <h5>Pure Functions</h5>
+            <p>A key aspect of functional programming is its use of pure functions. A pure function is a function that adheres to the following rules:</p>
+            <ol>
+                <li>The return value of a pure function should only depend on the values provided as arguments. It doesn't rely on values from somewhere else in the program.</li>
+                <li>There are no side-effects. A pure function doesn't change any values or data elsewhere in the program. It only makes non-destructive data transformations and returns new values, rather than altering any of the underlying data.</li>
+                <li>Referential transparency. Given the same arguments, a pure function will always return the same result.</li>
+            </ol>
+            <p>In order to follow these rules, any pure function must have:</p>
+            <ul>
+                <li>At least one argument; otherwise the return value must depend on something other than the arguments of the function, breaking the first rule</li>
+                <li>A return value; otherwise there’s no point in the function (unless it has changed something else in the program - in which case, it’s broken the 'no side-effects' rule).</li>
+            </ul>
+            <h4>Higher-Order Functions</h4>
+            <p>Higher-order functions are functions that accept another function as an argument, or return another function as a result, or both.</p>
+            <p>Closures are used extensively in higher-order functions as they allow us to create a generic function that can be used to then return more specific functions based on its arguments. This is done by creating a closure around a function's arguments that keeps them 'alive' in a return function.</p>
+        </div>
+        <div class="l08-radings">
+            <h2>L08 Readings' Notes</h2>
+            <h3>JSON Web Tokens</h3>
+            <p>JSON Web Token (JWT) is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. JWTs can be signed using a secret (with HMAC algorithm) or a public/private key pair using RSA.</p>
+            <h4>When to use JWT</h4>
+            <p>Some scenarios where JSON Web Tokens are useful are:</p>
+            <ul>
+                <li>Authentication</li>
+                <li>Information Exchange</li>
+            </ul>
+            <h4>JWT Structure</h4>
+            <p>JWTs consist of three parts separated by dots (.), which are:</p>
+            <ul>
+                <li>Header</li>
+                <li>Payload</li>
+                <li>Signature</li>
+            </ul>
+            <p>Therefore, a JWT typically looks like the following.</p>
+            <code>xxxxx.yyyyy.zzzzz</code>
+            <h5>Header</h5>
+            <p>The header typically consists of two parts: the type of the token, which is JWT, and the hashing algorithm such as HMAC SHA256 or RSA.</p>
+            <p>Example:</p>
+            <pre>
+                <code class="block">{
+    'alg': 'HS256',
+    'typ': 'JWT'
+}                      
+                </code>
+            </pre>
+            <h5>Payload</h5>
+            <p>The second part of the token is the payload, which contains the claims. Claims are statements about an entity (typically, the user) and additional metadata. There are three types of claims: reserved, public, and private claims.</p>
+            <p>Example:</p>
+            <pre>
+                <code class="block">{
+    'sub': '1234567890',
+    'name': 'John Doe',
+    'admin': true
+}                      
+                </code>
+            </pre>
+            <h5>Signature</h5>
+            <p>To create the signature part, you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.</p>
+            <p>For example, if you want to use the HMAC SHA256 algorithm, the signature will be created in the following way.</p>
+            <pre>
+                <code class="block">HMACSHA256(
+base64UrlEncode(header) + '.' +
+base64UrlEncode(payload),
+secret)
+                </code>
+            </pre>
+        </div>
+    </main>
+</body>
+</html>

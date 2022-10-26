@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 05 Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Week 05 Notes</h1>
+        <p class="author">by Isaac Salirrosas</p>
+    </header>
+    <main>
+        <div class="l09-readings">
+            <h2>L09 Readings' Notes</h2>
+            <h2>HTML5 APIs</h2>
+            <h3>The data- Attribute</h3>
+            <p>The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser.</p>
+            <p>The names of these attributes can be decided by the developer, but they must use the following format:</p>
+            <ul>
+                <li>Start with data-.</li>
+                <li>Contain only lowercase letters, numbers, hyphens, dots, colons or underscores.</li>
+                <li>Include an optional string value.</li>
+            </ul>
+            <p>Each element has a dataset property that can be used to access any data- attributes it contains.</p>
+            <h3>HTML5 APIs</h3>
+            <h4>HTML5 Web Storage</h4>
+            <p>The Web Storage API has some crucial differences with cookies:</p>
+            <ul>
+                <li>Information stored is not shared with the server on every request.</li>
+                <li>Information is available in multiple windows of the browser (but only if the domain is the same).</li>
+                <li>Storage capacity limit is much larger than the 4KB limit for cookies (There is no actual limit in the specification, but most browsers have a limit set at 5GB per domain.).</li>
+                <li>Any data stored does not automatically expire as it does with cookies. This potentially makes cookies a better choice for something like showing a popup once a day.</li>
+            </ul>
+            <p>The information is saved in the form of key-value pairs, and the values can only be strings.</p>
+            <h5>How to save information:</h5>
+            <code>localStorage.setItem('name', 'Walter White');</code>
+            <h5>How to get information:</h5>
+            <code>localStorage.getItem('name');</code>
+            <h5>How to remove information:</h5>
+            <code>localStorage.removeItem('name');</code>
+            <h5>How to stringify the item:</h5>
+            <code>localStorage.setItem('superman', JSON.stringify(hero);</code>
+            <h5>How to parse the item:</h5>
+            <code>superman = JSON.parse(localStorage.getItem('superman'));</code>
+            <h4>Geolocation</h4>
+            <p>The Geolocation API is used to obtain the geographical position of the device.</p>
+            <p>If geolocation is available, it will be a property of the navigator object that we met in Chapter 9. This property has a method called <code>getCurrentPosition()</code> that will return a position object to a specified callback function, called <code>youAreHere()</code> in the example:</p>
+            <code>navigator.geolocation.getCurrentPosition(youAreHere);</code>
+            <p>The position object passed to the <code>youAreHere()</code> function has a <code>coords</code> property with a <code>latitude</code> and <code>longitude</code> property, which together give the coordinates of the device.</p>
+            <pre>
+                <code class="block">function youAreHere(position) {
+    console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`); 
+}
+                </code>
+            </pre>
+            <h4>Web Workers</h4>
+            <p>To get started, use the <code>Worker()</code> constructor function to create a new worker:</p>
+            <code>const worker = new Worker('task.js');</code>
+            <p>This function takes the name of another JavaScript file as an argument. In the example, this is a file called 'task.js'. If this file exists, it will be downloaded asynchronously. The worker will only start once the file has finished downloading completely. If the file doesn’t exist, an error is thrown.</p>
+            <h5>How workers communicate with the main script:</h5>
+            <p>From main script to worker script:</p>
+            <code>worker.postMessage('Hello');</code>
+            <p>From worker script to main script:</p>
+            <code>self.postMessage('Finished');</code>
+            <h4>Websockets</h4>
+            <p>Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. This means that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.</p>
+            <code>const URL = 'wss://echo.websocket.org/';</code>
+            <code>const connection = new WebSocket(URL);</code>
+            <p>When the code new WebSocket(URL) runs, it creates an instance of a WebSocket object and tries to connect to the URL. When this is successful, it fires an event called 'open'.</p>
+            <pre>
+                <code class="block">connection.addEventListener('open', () => {
+    output('CONNECTED');
+}, false);                   
+                </code>
+            </pre>
+            <p>Now we need to add some code to allow us to add some messages. We'll start by adding an event listener to deal with when the form is submitted:</p>
+            <pre>
+                <code class="block">form.addEventListener('submit', message, false);
+function message(event) {
+    event.preventDefault();
+    const text = form.message.value;
+    output(`SENT: ${text}`);
+    connection.send(text);
+}
+                </code>
+            </pre>
+            <p>Let's create an event handler to deal with the response:</p>
+            <pre>
+                <code class="block">connection.addEventListener('message', (event) => {
+    output(`RESPONSE: ${event.data}`);
+}, false);                    
+                </code>
+            </pre>
+            <h4>Multimedia</h4>
+            <p>HTML5 introduced the <code>&lt;audio&gt;</code> and <code>&lt;video&gt;</code> tags used to insert audio and video clips into a web page. It also introduced a Media API for controlling the playback of the clips using JavaScript.</p>
+            <code>&lt;audio src='/song.mp3' controls&gt;&lt;/audio&gt;</code>
+            <code>&lt;video src='http://movie.mp4' controls&gt;&lt;/video&gt;</code>            
+            <p>Audio and video elements have a number of properties and methods to control the playback of the clip.</p>
+        <pre>
+            <code class="block">const video = document.getElementsByTagName('video')[0];
+video.play();
+video.pause();
+video.volume = 0.9;
+video.muted = true;
+video.currentTime += 10; // jumps forward 10 seconds
+video.playbackRate = 8; // fast-forward at 8 times as fast
+video.loop = true;
+video.duration;
+>> 52.209
+            </code>
+        </pre>
+        <h4>Canvas</h4>
+        <h5>The canvas element</h5>
+        <code>&lt;canvas id="myCanvas" class="myCanvas" width="200" height="200"&gt;&lt;/canvas&gt;</code>
+        <p>Canvas width and height properties determine how large the canvas coordinate system is. By default, meaning if we don’t define them, width will be 300 and height 150.</p>
+        <h5>Drawing on the canvas</h5>
+        <p>Getting the canvas and obtaining the drawing context:</p>
+        <code>var canvas = document.getElementById("myCanvas");</code>
+        <code>var context = canvas.getContext("2d");</code>
+        <h5>Drawing a rectangle</h5>
+        <p>Once we’ve defined the color of the stroke and the fill, we’re ready to start drawing! Let’s begin by drawing a rectangle. We can repeat the steps we just took: grabbing the canvas and the context, and setting a fill and stroke style. But now, we’ll draw a rectangle. We can do this by calling the <code>fillRect</code> and <code>strokeRect</code> methods. Both of these methods take the X and Y coordinates where you want to begin drawing the fill or the stroke, and the width and height of the rectangle. We’ll add the stroke and fill 10 pixels from the top and 10 pixels from the left of the canvas’s top-left corner:</p>
+        <pre>
+            <code class="block">var canvas = document.getElementById("myCanvas"); 
+var context = canvas.getContext("2d"); 
+context.strokeStyle = "red";
+context.fillStyle = "rgba(0, 0, 255, 0.5)";
+context.fillRect(10, 10, 100, 100);   
+context.strokeRect(10, 10, 100, 100);
+            </code>
+        </pre>
+        <h5>The canvas coordinate system</h5>
+        <p>As you may have gathered, the coordinate system in the canvas element is different from the Cartesian coordinate system you learned in math class. In the canvas coordinate system, the top-left corner is (0,0). If the canvas is 200 pixels by 200 pixels, then the bottom-right corner is (200,200), as Figure 12.3 illustrates.</p>
+        <h5>Creating a linear gradient</h5>
+        <p>createLinearGradient ’s x0 and y0 represent the starting location of the gradient. x1 and y1 represent the ending location.</p>
+        <pre>
+            <code class="block">function drawGradient() {
+    …
+    var gradient = context.createLinearGradient(0, 0, 0, 200);
+    gradient.addColorStop(0, "blue"); 
+    gradient.addColorStop(1, "white"); 
+    context.fillStyle = gradient; 
+    context.fillRect(10, 10, 100, 100); 
+    context.strokeRect(10, 10, 100, 100); 
+}                
+            </code>
+        </pre>
+        <h5>Drawing cricles</h5>
+        <p>We need to use <code>beginPath()</code> and <code>closePath()</code> and the <code>arc</code> method.</p>
+        <p>The signature for the arc method is: <code>arc(x, y, radius, startAngle, endAngle, anticlockwise)</code>.</p>
+        <pre>
+            <code class="block">function drawCircle(canvas) {
+    var context = canvas.getContext("2d");
+    context.beginPath();
+    context.arc(100, 100, 50, 0, Math.PI*2, true);
+    context.closePath();
+    context.strokeStyle = "red";
+    context.fillStyle = "blue";
+    context.lineWidth = 3;
+    context.fill(); 
+    context.stroke(); 
+}                
+            </code>
+        </pre>
+        </div>
+        <div class="l10-radings">
+            <h2>L10 Readings' Notes</h2>
+            <h3>Functions, Execution Context and Call Stack</h3>
+            <h4>The thread in JavaScript</h4>
+            <ul>
+                <li>Single threaded (one thing at a time)</li>
+                <li>Synchronous execution (by default)</li>
+            </ul>
+            <p>The JavaScript engine reads the code one line at a time and stores stuff in memory as it goes (variables, constants, functions).</p>
+            <p>This work is done inside something called a global execution context.</p>
+            <p>** The JS engine doesn’t go inside a function during the function declaration only when the function is called.</p>
+            <h3>Running/Calling/Invoking a function</h3>
+            <p>To call a function we use the parenthesis after the name of the function.</p>
+            <p>Once called, it starts something called a local execution context and starts to run the code inside the function.</p>
+            <p>If the function has any parameters, on execution, when a value is assigned to them they become arguments.</p>
+            <h4>The Call Stack</h4>
+            <p>A call stack is a mechanism for an interpreter (like the JavaScript interpreter in a web browser) to keep track of its place in a script that calls multiple functions — what function is currently being run and what functions are called from within that function, etc.</p>
+            <ul>
+                <li>When a script calls a function, the interpreter adds it to the call stack and then starts carrying out the function.</li>
+                <li>Any functions that are called by that function are added to the call stack further up, and run where their calls are reached.</li>
+                <li>When the current function is finished, the interpreter takes it off the stack and resumes execution where it left off in the last code listing.</li>
+                <li>If the stack takes up more space than it was assigned, a "stack overflow" error is thrown.</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

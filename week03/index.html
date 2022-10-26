@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 03 Notes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1 class="title">Week 03 Notes</h1>
+        <p class="author">by Isaac Salirrosas</p>
+    </header>
+    <main>
+        <div class="l05-readings">
+            <h2>L05 Readings' Notes</h2>
+            <h3>Ajax</h3>
+            <p>Ajax is a technique that allows web pages to communicate asynchronously with a server, and it dynamically updates web pages without reloading. This enables data to be sent and received in the background, as well as portions of a page to be updated in response to user events, while the rest of the program continues to run.</p>
+            <h3>Clients and Servers</h3>
+            <ul>
+                <li>The client (browser) sends the request to the server using HTTP methods.</li>
+                <li>The server receives the request, processes it and sends a response back to the client with the requested data.</li>
+                <li>Ajax allows JavaScript to request resources from a server on behalf of the client.</li>
+                <li>The same-origin policy in browsers blocks all requests from a domain that is different from the page making the request. Cross-origin resource sharing (CORS) is a solution to this problem as it allows resources to be requested from another website outside the original domain.</li>
+            </ul>
+            <h3>The Fetch API</h3>
+            <p>The global <code>fetch()</code> method has only one mandatory argument, which is the URL of the resource you want to fetch. The <code>fetch()</code> method returns a promise that resolves to the response returned from the URL that was provided as an argument.</p>
+            <h4>Response Interface</h4>
+            <p>The Fetch API introduced the Response interface that deals with the object that’s returned when the promise is fulfilled. Response objects have a number of properties and methods that allow us to process the response effectively.</p>
+            <p>Some of those properties are:</p>
+            <ul>
+                <li>ok</li>
+                <li>statusText</li>
+                <li>headers</li>
+                <li>url</li>
+                <li>redirected</li>
+                <li>type</li>
+            </ul>
+            <p>Some of those methods are:</p>
+            <ul>
+                <li>redirect()</li>
+                <li>text()</li>
+                <li>blob()</li>
+                <li>json()</li>
+            </ul>
+            <h4>Request Interface</h4>
+            <p><code>Request</code> objects are created using the <code>Request()</code> constructor, and include the following properties:</p>
+            <ul>
+                <li>url</li>
+                <li>method</li>
+                <li>headers</li>
+                <li>mode</li>
+                <li>cache</li>
+                <li>credentials</li>
+                <li>redirect</li>
+            </ul>
+            <h4>Headers Interface</h4>
+            <p>The Fetch API introduced a Headers interface, which can be used to create a <code>Headers</code> object, which can then be added as a property of <code>Request</code> and <code>Response</code> objects.</p>
+            <p>A <code>Headers</code> object can have the following properties and methods:</p>
+            <ul>
+                <li>has()</li>
+                <li>get()</li>
+                <li>set()</li>
+                <li>append()</li>
+                <li>delete()</li>
+                <li>keys()</li>
+                <li>values()</li>
+                <li>entries()</li>
+            </ul>
+        </div>
+        <div class="l06-radings">
+            <h3>Forms</h3>
+            <p>Forms are made up of a <form> element that contains form controls such as input fields, select menus and buttons. These input fields can be populated with information that is processed once the form has been submitted.</p>
+            <h4>Form Properties and Methods</h4>
+            <p>Form objects have a number of useful properties and methods that can be used to interact with the form.</p>
+            <ul>
+                <li><code>form.submit()</code> = Submits the form automatically</li>
+                <li><code>form.reset()</code> = Resets the form</li>
+                <li><code>form.action</code> = Sets the action attribute</li>
+            </ul>
+            <h4>Form Events</h4>
+            <p>Forms trigger a number of events like those discussed in the last chapter. Some of these events are exclusive to forms.</p>
+            <ul>
+                <li>The <code>focus</code> event: Occurs when an element is focused on.</li>
+                <li>The <code>blur</code> event: Occurs when the user moves the focus away from the form element.</li>
+                <li>The <code>change</code> event: Occurs when the user moves the focus away from the form element after changing it.</li>
+            </ul>
+            <h4>Form Controls</h4>
+            <p>Some common types of form control are:</p>
+            <ul>
+                <li><code>input</code> fields, including text, passwords, check boxes, radio buttons, and file uploads</li>
+                <li><code>select</code> menus for drop-down lists of options</li>
+                <li><code>textarea</code> elements for longer text entry</li>
+                <li><code>button</code> elements for submitting and resetting forms</li>
+            </ul>
+            <h4>Input Fields</h4>
+            <h5>Text Input Fields</h5>
+            <p>The default type of input field is text, which is used for entering a short piece of text, such as a username.</p>
+            <h5>Password Input Fields</h5>
+            <p>Input <code>type='password'</code> is used to enter passwords or secret information. This works in the same way as an input field with type='text', except the characters are concealed as they are entered so they’re unable to be read on the screen.</p>
+            <h5>Checkbox Input Fields</h5>
+            <p>Check boxes are created using input fields with <code>type='checkbox'</code>. They are used to select different options that can be checked (true) or left unchecked (false). The user can select more than one checkbox from a list.</p>
+            <h5>Radio Button Input Fields</h5>
+            <p>Radio buttons are created using input fields with <code>type='radio'</code>. Like checkboxes they allow users to check an option as true, but they provide an exclusive choice of options, so only one option can be selected.</p>
+            <h5>Hidden Input Fields</h5>
+            <p>Hidden fields can be created using input fields with <code>type='hidden'</code>. These are not displayed by the browser, but have a 'value' attribute that can contain information that is submitted with the form.</p>
+            <h5>File Input Fields</h5>
+            <p>A file input field can be created using input fields with <code>type='file'</code>. These are used to upload files, and most browsers will provide a browse button or similar that lets users select a file from their file system.</p>
+            <h4>Form Validation</h4>
+            <p>Form validation is the process of checking whether a user has entered the information into a form correctly. Examples of the types of validation that occur include ensuring that:</p>
+            <ul>
+                <li>A required field is completed</li>
+                <li>An email address is valid</li>
+                <li>A number is entered when numerical data is required</li>
+                <li>A password is at least a minimum number of characters</li>
+            </ul>
+            <p>Validation can occur on the client side using JavaScript, and on the server side. It is advisable to use both client-side and server-side validation.</p>
+            <p>HTML5 has its own validation API that can be used, although it lacks the full support from all browsers at the moment. The error messages that it produces can look inconsistent across browsers and are difficult to style.</p>
+            <p>The API works by simply adding relevant attributes to the form fields. For example, if a field is a required field that must be filled in, all you need to do is add a 'required' attribute to that field and the browser will take care of the rest.</p>
+            <p>It is also possible to implement custom form validation using JavaScript. For example, say we wanted to exclude any superhero names that begin with an 'X'. This is not a standard form of validation, so we’d have to write our own.</p>
+            <pre>
+                <code class="block">form.addEventListener('submit',validate,false);
+
+function validate(event) {
+    const firstLetter = form.heroName.value[0];
+    if (firstLetter.toUpperCase() === 'X') {
+        event.preventDefault();
+        alert('Your name is not allowed to start with X!');
+    }
+}</code>
+            </pre>
+        </div>
+    </main>
+</body>
+</html>
